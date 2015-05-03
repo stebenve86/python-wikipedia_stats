@@ -119,7 +119,7 @@ output_file_name = category_file + "_" + args.language + "_" + args.days + "_" +
 output_file_path = os.path.join(args.output_folder, output_file_name)
 try:
   output_file = open(output_file_path, "w")
-  output_file.write("Title|URL|Hits\n")
+  output_file.write("Title|URL|Hits_" + args.days + "\n")
   for key in sorted(all_hits, reverse=True):
     for article in all_hits[key]:
       output_file.write(article[0] + "|" + "http://" + args.language + ".wikipedia.org/wiki/" + article[1] + "|" + str(key) + "\n")
