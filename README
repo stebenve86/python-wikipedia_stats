@@ -10,7 +10,7 @@ The default output folder has to be created manually.
 
 ##### USAGE #####
 
-usage: wikipedia_stats.py [-h] [-l LANGUAGE] [-d {30,60,90}]
+usage: wikipedia_category_stats.py [-h] [-l LANGUAGE] [-d {30,60,90}]
                           [-o OUTPUT_FOLDER]
                           category
 
@@ -35,14 +35,14 @@ optional arguments:
 
 - Category: "Neuroscience", Language: "English", Days: last 30 days
 
-python wikipedia_stats.py Neuroscience  
+python wikipedia_category_stats.py Neuroscience  
 
 - Category: "Neuroscience", Language: "English", Days: last 90 days
 
-python wikipedia_stats.py Neuroscience -d 90 
+python wikipedia_category_stats.py Neuroscience -d 90 
 
 - Category: "Neuroscience", Language: "Simple English", Days: last 60 days
 
-python wikipedia_stats.py Neuroscience -l simple -d 60 
+python wikipedia_category_stats.py Neuroscience -l simple -d 60 
 
 ##################
