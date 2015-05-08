@@ -1,12 +1,19 @@
 
-A simple script which gets the number of hits for the Wikipedia articles belonging to a given category.
+A couple of scripts which retrieve the number of hits for Wikipedia articles in the last 30, 60 or 90 days.
 
 The statistics (the number of hits) are queried from "http://stats.grok.se".
 
-The user has to provide the category, the Wikipedia language (e.g. en, simple, de, es, it), the time range (last 30, 60 or 90 days) and the output folder where the result will be saved (a csv file with 3 columns: the article title, the article URL and the number of hits).
-
 The default output folder has to be created manually.
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%wikipedia_category_stats.py%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A simple script which gets the number of hits for the Wikipedia articles belonging to a given category.
+
+The user has to provide the category, the Wikipedia language (e.g. en, simple, de, es, it), the time range (last 30, 60 or 90 days) and the output folder where the result will be saved (a csv file with 3 columns: the article title, the article URL and the number of hits).
 
 ##### USAGE #####
 
@@ -28,9 +35,6 @@ optional arguments:
   -o OUTPUT_FOLDER, --output_folder OUTPUT_FOLDER
                         the output folder (default: output)
 
-################
-
-
 #### EXAMPLES ####
 
 - Category: "Neuroscience", Language: "English", Days: last 30 days
@@ -45,4 +49,47 @@ python wikipedia_category_stats.py Neuroscience -d 90
 
 python wikipedia_category_stats.py Neuroscience -l simple -d 60 
 
-##################
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%wikipedia_language_stats.py%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A simple script which gets the number of hits for the same Wikipedia articles in different languages.
+
+The user has to provide the article title, the Wikipedia language (e.g. en, simple, de, es, it) for the title, the time range (last 30, 60 or 90 days) and the output folder where the result will be saved (a csv file with 3 columns: the language, the article URL and the number of hits).
+
+##### USAGE #####
+
+usage: wikipedia_language_stats.py [-h] [-l LANGUAGE] [-d {30,60,90}]
+                                   [-o OUTPUT_FOLDER]
+                                   title
+
+Get Wikipedia articles for all the possible languages
+
+positional arguments:
+  title                 the Wikipedia article title
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l LANGUAGE, --language LANGUAGE
+                        the language of the argument article (default: en)
+  -d {30,60,90}, --days {30,60,90}
+                        time range for stats (days) (default: 30)
+  -o OUTPUT_FOLDER, --output_folder OUTPUT_FOLDER
+                        the output folder (default: output)
+
+#### EXAMPLES ####
+
+- Article: "Andrea Bertolacci", Language: "English", Days: last 30 days
+
+python wikipedia_category_stats.py "Andrea Bertolacci"  
+
+- Category: "Andrea Bertolacci", Language: "English", Days: last 90 days
+
+python wikipedia_category_stats.py "Andrea Bertolacci" -d 90 
+
+- Category: "Andrea Bertolacci", Language: "Italian", Days: last 60 days
+
+python wikipedia_category_stats.py "Andrea Bertolacci" -l it -d 60 
+
