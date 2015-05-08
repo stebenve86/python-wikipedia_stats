@@ -11,7 +11,7 @@ The default output folder has to be created manually.
 %wikipedia_category_stats.py%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A simple script which gets the number of hits for the Wikipedia articles belonging to a given category.
+A simple script which retrieves the number of hits for the Wikipedia articles belonging to a given category.
 
 The user has to provide the category, the Wikipedia language (e.g. en, simple, de, es, it), the time range (last 30, 60 or 90 days) and the output folder where the result will be saved (a csv file with 3 columns: the article title, the article URL and the number of hits).
 
@@ -55,7 +55,7 @@ python wikipedia_category_stats.py Neuroscience -l simple -d 60
 %wikipedia_language_stats.py%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A simple script which gets the number of hits for the same Wikipedia articles in different languages.
+A simple script which retrieves the number of hits for the same Wikipedia articles in different languages.
 
 The user has to provide the article title, the Wikipedia language (e.g. en, simple, de, es, it) for the title, the time range (last 30, 60 or 90 days) and the output folder where the result will be saved (a csv file with 3 columns: the language, the article URL and the number of hits).
 
