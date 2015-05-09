@@ -1,5 +1,5 @@
 
-A couple of scripts which retrieve the number of hits for Wikipedia articles in the last 30, 60 or 90 days.
+A collection of scripts which retrieve the number of hits for Wikipedia articles in the last 30, 60 or 90 days.
 
 The statistics (the number of hits) are queried from "http://stats.grok.se".
 
