@@ -67,17 +67,27 @@ except Exception:
   print("")
   sys.exit(1)
 print("done.")
+print("")
 
 parsed_response = json.loads(response_content)
 
 ### Get stats ###
 page_id = (parsed_response["query"]["pages"].keys())[0]
-languages = parsed_response["query"]["pages"][page_id]["langlinks"]
-num_languages = len(languages)
-print("")
+languages = {}
+try:
+  pageid = parsed_response["query"]["pages"][page_id]["pageid"]
+except:
+  print("Article " + args.title + " not found for language " + args.language)
+  print("")
+  sys.exit(1)
+try:
+  languages = parsed_response["query"]["pages"][page_id]["langlinks"]
+  num_languages = len(languages)
+except:
+  num_languages = 0
 # exit if no languages have been found
 if num_languages == 0:
-  print("No languages found for article \"" + args.title + "\"") 
+  print("No other languages found for article \"" + args.title + "\"") 
   print("")
   sys.exit(1)
 print(str(num_languages) + " languages found for article \"" + args.title + "\":")
