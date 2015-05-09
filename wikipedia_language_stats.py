@@ -90,7 +90,7 @@ if num_languages == 0:
   print("No other languages found for article \"" + args.title + "\"") 
   print("")
   sys.exit(1)
-print(str(num_languages) + " languages found for article \"" + args.title + "\":")
+print(str(num_languages) + " other languages found for article \"" + args.title + "\":")
 print("")
 # print the list of languages found
 counter = 1
