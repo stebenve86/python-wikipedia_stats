@@ -77,7 +77,7 @@ languages = {}
 try:
   pageid = parsed_response["query"]["pages"][page_id]["pageid"]
 except:
-  print("Article " + args.title + " not found for language " + args.language)
+  print("Article \"" + args.title + "\" not found for language \"" + args.language + "\"")
   print("")
   sys.exit(1)
 try:
