@@ -3,8 +3,6 @@ A couple of scripts which retrieve the number of hits for Wikipedia articles in 
 
 The statistics (the number of hits) are queried from "http://stats.grok.se".
 
-The default output folder has to be created manually.
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,6 +12,8 @@ The default output folder has to be created manually.
 A simple script which retrieves the number of hits for the Wikipedia articles belonging to a given category.
 
 The user has to provide the category, the Wikipedia language (e.g. en, simple, de, es, it), the time range (last 30, 60 or 90 days) and the output folder where the result will be saved (a csv file with 3 columns: the article title, the article URL and the number of hits).
+
+The default output folder has to be created manually.
 
 ##### USAGE #####
 
@@ -55,9 +55,11 @@ python wikipedia_category_stats.py Neuroscience -l simple -d 60
 %wikipedia_language_stats.py%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A simple script which retrieves the number of hits for the same Wikipedia articles in different languages.
+A simple script which retrieves the number of hits for the same Wikipedia articles in all the possible languages.
 
 The user has to provide the article title, the Wikipedia language (e.g. en, simple, de, es, it) for the title, the time range (last 30, 60 or 90 days) and the output folder where the result will be saved (a csv file with 3 columns: the language, the article URL and the number of hits).
+
+The default output folder has to be created manually.
 
 ##### USAGE #####
 
@@ -85,11 +87,54 @@ optional arguments:
 
 python wikipedia_category_stats.py "Andrea Bertolacci"  
 
-- Category: "Andrea Bertolacci", Language: "English", Days: last 90 days
+- Article: "Andrea Bertolacci", Language: "English", Days: last 90 days
 
 python wikipedia_category_stats.py "Andrea Bertolacci" -d 90 
 
-- Category: "Andrea Bertolacci", Language: "Italian", Days: last 60 days
+- Article: "Andrea Bertolacci", Language: "Italian", Days: last 60 days
 
 python wikipedia_category_stats.py "Andrea Bertolacci" -l it -d 60 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%i%%%%
+%wikipedia_article_compare.py%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A simple script which retrieves the number of hits for the same Wikipedia articles for two given languages.
+
+The user has to provide the article title, the first Wikipedia language (e.g. en, simple, de, es, it) for the title, the second Wikipedia language and the time range (last 30, 60 or 90 days).
+
+##### USAGE #####
+
+usage: wikipedia_article_compare.py [-h] [-l1 LANGUAGE1] [-l2 LANGUAGE2]
+                                    [-d {30,60,90}]
+                                    title
+
+Compare Wikipedia articles for two languages
+
+positional arguments:
+  title                 the Wikipedia article title
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l1 LANGUAGE1, --language1 LANGUAGE1
+                        the language of the argument article (default: en)
+  -l2 LANGUAGE2, --language2 LANGUAGE2
+                        the second language to be checked (default: simple)
+  -d {30,60,90}, --days {30,60,90}
+                        time range for stats (days) (default: 30)
+
+#### EXAMPLES ####
+
+- Article: "Gianluca Signorini", Language1: "English", Language2: "Italian", Days: last 30 days
+
+python wikipedia_article_compare.py "Gianluca Signorini" -l2 it  
+
+- Article: "Gianluca Signorini", Language1: "English", Days: last 90 days
+
+python wikipedia_article_compare.py "Gianluca Signorini" -l2 it -d 90 
+
+- Article: "Gianluca Signorini", Language1: "Italian", Language2: "English", Days: last 60 days
+
+python wikipedia_article_compare.py "Gianluca Signorini" -l1 it -l2 en -d 60 
