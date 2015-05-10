@@ -32,6 +32,7 @@ parser.add_argument("title", help="the Wikipedia article title")
 parser.add_argument("-l", "--language", default="en", help="the language of the argument article (default: %(default)s)")
 parser.add_argument("-d", "--days", choices=["30", "60", "90"], default="30", help="time range for stats (days) (default: %(default)s)")
 parser.add_argument("-o", "--output_folder", default="output", help="the output folder (default: %(default)s)")
+parser.add_argument("--no-stats", dest="no_stats", action="store_true", help="no stats queries are sent")
 
 args = parser.parse_args()
 
@@ -99,6 +100,9 @@ for language in languages:
   counter += 1
 print("")
 print("")
+
+if args.no_stats:
+  sys.exit(1)
 
 all_hits = {}
 

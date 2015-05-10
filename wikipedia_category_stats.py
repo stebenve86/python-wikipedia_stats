@@ -31,6 +31,7 @@ parser.add_argument("category", help="the Wikipedia category")
 parser.add_argument("-l", "--language", default="en", help="the Wikipedia language (default: %(default)s)")
 parser.add_argument("-d", "--days", choices=["30", "60", "90"], default="30", help="time range for stats (days) (default: %(default)s)")
 parser.add_argument("-o", "--output_folder", default="output", help="the output folder (default: %(default)s)")
+parser.add_argument("--no-stats", dest="no_stats", action="store_true", help="no stats queries are sent")
 
 args = parser.parse_args()
 
@@ -87,6 +88,9 @@ for article in articles:
   counter += 1
 print("")
 print("")
+
+if args.no_stats:
+  sys.exit(1)
 
 # query the stats url for each article, save the values in a dictionary
 all_hits = {}
