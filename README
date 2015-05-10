@@ -34,6 +34,7 @@ optional arguments:
                         time range for stats (days) (default: 30)
   -o OUTPUT_FOLDER, --output_folder OUTPUT_FOLDER
                         the output folder (default: output)
+  --no-stats            no stats queries are sent
 
 #### EXAMPLES ####
 
@@ -80,6 +81,7 @@ optional arguments:
                         time range for stats (days) (default: 30)
   -o OUTPUT_FOLDER, --output_folder OUTPUT_FOLDER
                         the output folder (default: output)
+  --no-stats            no stats queries are sent
 
 #### EXAMPLES ####
 
