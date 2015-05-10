@@ -179,7 +179,7 @@ python wikipedia_list_categories.py -p "List of"
 
 - Language: "English", Prefix: "List of", From: "List of Bulgarian journalists"
 
-python wikipedia_list_categories.py -p "List of" -f "List of Bulgarian journalists"
+python wikipedia_list_categories.py -p "List of" -f "List_of_Bulgarian_journalists"
 
 - Language: "Italian", All categories
 
