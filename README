@@ -5,9 +5,9 @@ The statistics (the number of hits) are queried from "http://stats.grok.se".
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%wikipedia_category_stats.py%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% wikipedia_category_stats.py %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 A simple script which retrieves the number of hits for the Wikipedia articles belonging to a given category.
 
@@ -52,9 +52,9 @@ python wikipedia_category_stats.py Neuroscience -l simple -d 60
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%wikipedia_language_stats.py%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% wikipedia_language_stats.py %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 A simple script which retrieves the number of hits for the same Wikipedia articles in all the possible languages.
 
@@ -99,9 +99,9 @@ python wikipedia_category_stats.py "Andrea Bertolacci" -l it -d 60
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%i%%%%
-%wikipedia_article_compare.py%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% wikipedia_article_compare.py %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 A simple script which retrieves the number of hits for the same Wikipedia articles for two given languages.
 
@@ -140,3 +140,47 @@ python wikipedia_article_compare.py "Gianluca Signorini" -l2 it -d 90
 - Article: "Gianluca Signorini", Language1: "Italian", Language2: "English", Days: last 60 days
 
 python wikipedia_article_compare.py "Gianluca Signorini" -l1 it -l2 en -d 60 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% wikipedia_list_categories.py %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A simple script which retrieves the categories for a given Wikipedia language.
+
+The user has to provide the Wikipedia language, the prefix for the query (optional) and the starting category, which is needed if more than 500 results are found (optional). 
+
+##### USAGE #####
+
+usage: wikipedia_list_categories.py [-h] [-l LANGUAGE] [-p PREFIX]
+                                    [-f FROM_CATEGORY]
+
+List Wikipedia categories for a given language
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l LANGUAGE, --language LANGUAGE
+                        the Wikipedia language (default: en)
+  -p PREFIX, --prefix PREFIX
+                        the prefix for the categories to be retrieved
+  -f FROM_CATEGORY, --from FROM_CATEGORY
+                        the starting category to be retrieved
+
+#### EXAMPLES ####
+
+- Language: "English", All categories
+
+python wikipedia_list_categories.py
+
+- Language: "English", Prefix: "List of"
+
+python wikipedia_list_categories.py -p "List of"
+
+- Language: "English", Prefix: "List of", From: "List of Bulgarian journalists"
+
+python wikipedia_list_categories.py -p "List of" -f "List of Bulgarian journalists"
+
+- Language: "Italian", All categories
+
+python wikipedia_list_categories.py -l it
