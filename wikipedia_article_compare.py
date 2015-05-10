@@ -17,7 +17,6 @@ limitations under the License.
 """
 
 import sys
-import os
 import argparse
 import urllib
 import urllib2
