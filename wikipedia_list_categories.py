@@ -23,7 +23,7 @@ import urllib2
 import json
 
 ### Argument parser ###
-parser = argparse.ArgumentParser(description="Compare Wikipedia articles for two languages")
+parser = argparse.ArgumentParser(description="List Wikipedia categories for a given language")
 parser.add_argument("-l", "--language", default="en", help="the Wikipedia language (default: %(default)s)")
 parser.add_argument("-p", "--prefix", help="the prefix for the categories to be retrieved")
 parser.add_argument("-f", "--from", dest="from_category", help="the starting category to be retrieved")
